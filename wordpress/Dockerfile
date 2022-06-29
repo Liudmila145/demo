@@ -2,8 +2,8 @@ FROM ubuntu:20.04
 
 RUN adduser wordpress
 
-RUN apt update
-RUN apt install -y php-fpm php-mysql nginx supervisor unzip wget
+RUN apt update && apt upgrade -y
+RUN apt install -y php-fpm php-mysql nginx supervisor
 
 RUN mkdir -p /var/www/wordpress
 COPY ./code /var/www/wordpress
