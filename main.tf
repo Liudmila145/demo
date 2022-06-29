@@ -109,7 +109,7 @@ resource "aws_instance" "wordpress-server" {
     sudo apt -y install docker-ce docker-ce-cli containerd.io docker-compose-plugin
     sudo usermod -aG docker ubuntu
 
-    git clone https://github.com/Liudmila145/demo.git && cd /demo && docker-compose up -d
+    git clone https://github.com/Liudmila145/demo.git && cd ./demo && docker compose up -d
   EOF
 
   vpc_security_group_ids = [
