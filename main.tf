@@ -8,7 +8,7 @@ terraform {
 }
 
 provider "aws" {
-  region = "us-east-1"
+  region = "eu-north-1"
 }
 
 resource "aws_vpc" "wordpress-vpc" {
@@ -94,7 +94,7 @@ data "aws_ami" "ubuntu" {
 
 resource "aws_instance" "wordpress-server" {
   ami           = data.aws_ami.ubuntu.id
-  instance_type = "t2.micro"
+  instance_type = "t3.micro"
   subnet_id     = aws_subnet.wordpress-subnet.id
 
   associate_public_ip_address = true
